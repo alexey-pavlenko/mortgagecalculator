@@ -4,7 +4,7 @@ import java.text.NumberFormat;
 public class Mortgagev3 {
     public static void main(String[] args) {
 
-        var mort = new MinAndMaxForMortgagev3();
+        var mort = new MortgageCalculatorV3();
         mort.valuePrincipalMinMax(25_000,90_000);
 
        mort.valuePeriodMinMax((byte) 1, (byte) 29);
