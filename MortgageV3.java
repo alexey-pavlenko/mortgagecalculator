@@ -1,7 +1,7 @@
 package com.gethigh;
 import java.text.NumberFormat;
 
-public class Mortgagev3 {
+public class MortgageV3 {
     public static void main(String[] args) {
 
         var mort = new MortgageCalculatorV3();
