@@ -28,10 +28,6 @@ public class MortgageCalculatorV3 {
 
         while (principal < minValuePrincipal || principal > maxValuePrincipal) {
 
-
-
-
-
             System.out.printf("WATAFACKUDOING I TOLD YA %s - %s", minValuePrincipal, maxValuePrincipal);
 
             System.out.printf("\nPrincipal (%s - %s) ONLY BORAH: ", minValuePrincipal, maxValuePrincipal);
