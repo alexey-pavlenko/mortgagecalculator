@@ -12,7 +12,6 @@ public class MortgageCalculatorV3 {
         setMinValuePrincipal(minValuePrincipal);
         setMaxValuePrincipal(maxValuePrincipal);
     }
-
     private static int valuePrincipal () {
 
         Scanner mortgage = new Scanner(System.in);
