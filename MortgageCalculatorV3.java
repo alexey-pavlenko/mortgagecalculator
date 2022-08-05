@@ -21,12 +21,15 @@ public class MortgageCalculatorV3 {
 
         while (!mortgage.hasNextInt()) {
             System.out.printf("Input is not a number. Enter a number: ");
-            mortgage.nextLine();
+            mortgage.next();
         }
 
         int principal = mortgage.nextInt();
 
         while (principal < minValuePrincipal || principal > maxValuePrincipal) {
+
+
+
 
 
             System.out.printf("WATAFACKUDOING I TOLD YA %s - %s", minValuePrincipal, maxValuePrincipal);
@@ -35,8 +38,11 @@ public class MortgageCalculatorV3 {
 
             while (!mortgage.hasNextInt()) {
                 System.out.printf("Input is not a number. Enter a number: ");
-                mortgage.nextLine();
+
+                mortgage.next();
+
             }
+
 
             principal = mortgage.nextInt();
 
@@ -73,7 +79,7 @@ public class MortgageCalculatorV3 {
 
         while (!mortgage.hasNextByte()) {
             System.out.printf("Input is not a number. Enter a number: ");
-            mortgage.nextLine();
+            mortgage.next();
         }
 
         byte periodYears = mortgage.nextByte();
@@ -87,7 +93,7 @@ public class MortgageCalculatorV3 {
 
             while (!mortgage.hasNextByte()) {
                 System.out.printf("Input is not a number. Enter a number: ");
-                mortgage.nextLine();
+                mortgage.next();
             }
 
             periodYears = mortgage.nextByte();
@@ -126,7 +132,7 @@ public class MortgageCalculatorV3 {
 
         while (!mortgage.hasNextFloat()) {
             System.out.printf("Input is not a number. Enter a number: ");
-            mortgage.nextLine();
+            mortgage.next();
         }
 
         float annualInterestRate = mortgage.nextFloat();
@@ -139,7 +145,7 @@ public class MortgageCalculatorV3 {
 
             while (!mortgage.hasNextFloat()) {
                 System.out.printf("Input is not a number. Enter a number: ");
-                mortgage.nextLine();
+                mortgage.next();
             }
 
             annualInterestRate = mortgage.nextFloat();
