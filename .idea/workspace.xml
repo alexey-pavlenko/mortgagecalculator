@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5a1162ed-40f4-4456-bd50-3ba8432de51a" name="Changes" comment="fixing compiling">
-      <change beforePath="$PROJECT_DIR$/src/MortgageCalculatorV3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MortgageCalculatorV3.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MortgageV3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MortgageV3.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -11,6 +10,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -20,8 +24,8 @@
     "jdk.selected.JAVA_MODULE": "openjdk-18",
     "last_opened_file_path": "C:/Users/alexey.a.pavlenko/IdeaProjects/untitled8/src",
     "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+    "project.structure.proportion": "0.16894531",
+    "project.structure.side.proportion": "0.2"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -51,7 +55,21 @@
       <option name="project" value="LOCAL" />
       <updated>1659785095175</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="fixing compiling">
+      <created>1659785246690</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1659785246690</updated>
+    </task>
+    <task id="LOCAL-00003" summary="fixing compiling">
+      <created>1659785479364</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1659785479364</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
