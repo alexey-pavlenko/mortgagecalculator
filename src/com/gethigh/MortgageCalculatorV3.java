@@ -8,44 +8,62 @@ public class MortgageCalculatorV3 {
     private static byte maxValuePeriod;
     private static float minValueAnnualRate;
     private static float maxValueAnnualRate;
+    private static boolean gotPrincipal = false;
+    private static int principal;
+
+
+
+
     public void valuePrincipalMinMax (int minValuePrincipal, int maxValuePrincipal) {
         setMinValuePrincipal(minValuePrincipal);
         setMaxValuePrincipal(maxValuePrincipal);
     }
-    private static int valuePrincipal () {
+    private int valuePrincipal () {
 
-        Scanner mortgage = new Scanner(System.in);
-        System.out.printf("Principal (%s - %s) ONLY BORAH: ", minValuePrincipal, maxValuePrincipal);
+        if (!gotPrincipal) {
 
-
-        while (!mortgage.hasNextInt()) {
-            System.out.printf("Input is not a number. Enter a number: ");
-            mortgage.next();
-        }
-
-        int principal = mortgage.nextInt();
-
-        while (principal < minValuePrincipal || principal > maxValuePrincipal) {
-
-            System.out.printf("WATAFACKUDOING I TOLD YA %s - %s", minValuePrincipal, maxValuePrincipal);
-
-            System.out.printf("\nPrincipal (%s - %s) ONLY BORAH: ", minValuePrincipal, maxValuePrincipal);
+            Scanner mortgage = new Scanner(System.in);
+            System.out.printf("Principal (%s - %s) ONLY BORAH: ", minValuePrincipal, maxValuePrincipal);
 
             while (!mortgage.hasNextInt()) {
                 System.out.printf("Input is not a number. Enter a number: ");
-
                 mortgage.next();
-
             }
-
 
             principal = mortgage.nextInt();
 
-            continue;
 
+
+            while (principal < minValuePrincipal || principal > maxValuePrincipal) {
+
+                System.out.printf("WATAFACKUDOING I TOLD YA %s - %s", minValuePrincipal, maxValuePrincipal);
+
+                System.out.printf("\nPrincipal (%s - %s) ONLY BORAH: ", minValuePrincipal, maxValuePrincipal);
+
+                while (!mortgage.hasNextInt()) {
+                    System.out.printf("Input is not a number. Enter a number: ");
+
+                    mortgage.next();
+
+                }
+
+
+                principal = mortgage.nextInt();
+
+
+
+                // continue;
+
+
+
+            }
+
+            gotPrincipal = true;
         }
-        return principal;
 
+
+
+        return principal;
     }
     private void setMinValuePrincipal (int minValuePrincipal) {
         if (minValuePrincipal <= 20_000) {
@@ -172,11 +190,12 @@ public class MortgageCalculatorV3 {
 
         }
     }
+    /*
     public static float result() {
-        var resultMortgage = new MortgageCalculatorV3();
-        int valuePrincipal = resultMortgage.valuePrincipal();
-        int periodYears = resultMortgage.periodYears();
-        float annualInterestRate = resultMortgage.annualInterestRate();
+        MortgageCalculatorV3 asd = new MortgageCalculatorV3();
+        int valuePrincipal = asd.principal;
+        int periodYears = periodYears();
+        float annualInterestRate = annualInterestRate();
         float monthInterestRate = annualInterestRate/100/12;
         float parentheses = 1 + monthInterestRate;
         float numberOfPayments = periodYears * 12;
@@ -187,4 +206,32 @@ public class MortgageCalculatorV3 {
         float round = Math.round(mortgageResult*100);
         return round/100;
     }
+
+    */
+
+    public float result() {
+        var resultMortgage = new MortgageCalculatorV3();
+        int valuePrincipal = resultMortgage.valuePrincipal();
+        int periodYears = periodYears();
+        float annualInterestRate = annualInterestRate();
+        float monthInterestRate = annualInterestRate/100/12;
+        float parentheses = 1 + monthInterestRate;
+        float numberOfPayments = periodYears * 12;
+        float power = (float) Math.pow(parentheses,numberOfPayments);
+        float upperLine = monthInterestRate*power;
+        float bottomLine = power-1;
+        float mortgageResult = valuePrincipal*(upperLine/bottomLine);
+        float round = Math.round(mortgageResult*100);
+        return round/100;
+
+    }
+
+    public float remaining() {
+        var asd  = new MortgageCalculatorV3();
+        float valueRemaining = asd.valuePrincipal();
+        return valueRemaining;
+    }
+
+
+
 }
