@@ -23,7 +23,7 @@ public class MortgageCalculatorV3 {
         if (!gotPrincipal) {
 
             Scanner mortgage = new Scanner(System.in);
-            System.out.printf("Principal (%s - %s) ONLY BORAH: ", minValuePrincipal, maxValuePrincipal);
+            System.out.printf("Principal (%s - %s) ONLY: ", minValuePrincipal, maxValuePrincipal);
 
             while (!mortgage.hasNextInt()) {
                 System.out.printf("Input is not a number. Enter a number: ");
@@ -36,9 +36,9 @@ public class MortgageCalculatorV3 {
 
             while (principal < minValuePrincipal || principal > maxValuePrincipal) {
 
-                System.out.printf("WATAFACKUDOING I TOLD YA %s - %s", minValuePrincipal, maxValuePrincipal);
+                System.out.printf("WATRUDOIN I TOLD YA %s - %s", minValuePrincipal, maxValuePrincipal);
 
-                System.out.printf("\nPrincipal (%s - %s) ONLY BORAH: ", minValuePrincipal, maxValuePrincipal);
+                System.out.printf("\nPrincipal (%s - %s) ONLY: ", minValuePrincipal, maxValuePrincipal);
 
                 while (!mortgage.hasNextInt()) {
                     System.out.printf("Input is not a number. Enter a number: ");
@@ -88,7 +88,7 @@ public class MortgageCalculatorV3 {
     private static byte periodYears () {
 
         Scanner mortgage = new Scanner(System.in);
-        System.out.printf("Period (Years) (%s - %s) ONLY BORAH: ", minValuePeriod, maxValuePeriod);
+        System.out.printf("Period (Years) (%s - %s) ONLY: ", minValuePeriod, maxValuePeriod);
 
         while (!mortgage.hasNextByte()) {
             System.out.printf("Input is not a number. Enter a number: ");
@@ -100,7 +100,7 @@ public class MortgageCalculatorV3 {
         while (periodYears < minValuePeriod || periodYears > maxValuePeriod) {
 
 
-            System.out.printf("WATAFACKUDOING I TOLD YA %s - %s", minValuePeriod, maxValuePeriod);
+            System.out.printf("WATRUDOIN I TOLD YA %s - %s", minValuePeriod, maxValuePeriod);
 
             System.out.print("\nPeriod (Years): ");
 
@@ -141,7 +141,7 @@ public class MortgageCalculatorV3 {
 
     private static float annualInterestRate () {
         Scanner mortgage = new Scanner(System.in);
-        System.out.printf("Annual Rate (%s - %s) ONLY BORAH: ", minValueAnnualRate, maxValueAnnualRate);
+        System.out.printf("Annual Rate (%s - %s) ONLY: ", minValueAnnualRate, maxValueAnnualRate);
 
         while (!mortgage.hasNextFloat()) {
             System.out.printf("Input is not a number. Enter a number: ");
@@ -152,7 +152,7 @@ public class MortgageCalculatorV3 {
 
         while (annualInterestRate < minValueAnnualRate || annualInterestRate > maxValueAnnualRate) {
 
-            System.out.printf("WATAFACKUDOING I TOLD YA %s - %s", minValueAnnualRate, maxValueAnnualRate);
+            System.out.printf("WATRUDOIN I TOLD YA %s - %s", minValueAnnualRate, maxValueAnnualRate);
 
             System.out.print("\nAnnual Rate : ");
 
