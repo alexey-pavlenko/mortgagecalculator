@@ -5,23 +5,25 @@ import java.text.NumberFormat;
 public class MortgageV3 {
     public static void main(String[] args) {
 
-        var mort = new MortgageCalculatorV3();
-        mort.valuePrincipalMinMax(25_000,90_000);
+        var mortPrincipal = new MortgagePrincipal();
+        mortPrincipal.valuePrincipalMinMax(25_000,90_000);
 
-        mort.valuePeriodMinMax((byte) 1, (byte) 29);
+        var mortValuePeriod = new MortgageValuePeriod();
+        mortValuePeriod.valuePeriodMinMax((byte) 1, (byte) 29);
 
-        mort.annualRateValueMinMax((float) 0.1, (float) 20.1);
+        var mortValueAnnualRate = new MortgageValueAnnualRate();
 
-        float mortgageResult = mort.result();
+        mortValueAnnualRate.annualRateValueMinMax((float) 0.1, (float) 20.1);
 
-        float valRemaining = mort.remaining();
+        var finalMortgageCalculations = new FinalMortgageCalculations();
 
+        float monthlyPayment = finalMortgageCalculations.monthlyPayment();
 
-        String resultDollars = NumberFormat.getCurrencyInstance().format(mortgageResult);
+        String resultDollars = NumberFormat.getCurrencyInstance().format(monthlyPayment);
 
         System.out.println("Your monthly payment: " + resultDollars);
 
-        float  principalValue = valRemaining;
+        float  principalValue = finalMortgageCalculations.remainingDept();
         int monthX = 0;
         DecimalFormat roundItUp = new DecimalFormat("##.00");
 
@@ -31,7 +33,7 @@ public class MortgageV3 {
 
             System.out.printf("Remaining dept in Month %s: "+roundItUp.format(principalValue)+"\n", monthX);
 
-            principalValue = principalValue - mortgageResult;
+            principalValue = principalValue - monthlyPayment;
 
         }
 
