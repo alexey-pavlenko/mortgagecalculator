@@ -2,12 +2,12 @@ package com.gethigh;
 
 import static com.gethigh.MortgageValueAnnualRate.annualInterestRate;
 import static com.gethigh.MortgageValuePeriod.periodYears;
+import static com.gethigh.MortgagePrincipal.valuePrincipal;
 
 public class FinalMortgageCalculations
 {
     public float monthlyPayment() {
-        var resultMortgage = new MortgagePrincipal();
-        int valuePrincipal = resultMortgage.valuePrincipal();
+        int valuePrincipal = valuePrincipal();
         int periodYears = periodYears();
         float annualInterestRate = annualInterestRate();
         float monthInterestRate = annualInterestRate/100/12;
@@ -23,9 +23,7 @@ public class FinalMortgageCalculations
     }
 
     public float remainingDept() {
-        var asd  = new MortgagePrincipal();
-        float valueRemaining = asd.valuePrincipal();
-        return valueRemaining;
+        return (float) valuePrincipal();
     }
 
 }

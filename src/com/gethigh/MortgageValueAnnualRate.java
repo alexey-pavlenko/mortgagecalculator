@@ -6,7 +6,10 @@ public class MortgageValueAnnualRate {
     private static float minValueAnnualRate;
     private static float maxValueAnnualRate;
 
-    public void annualRateValueMinMax (float minValueAnnualRate, float maxValueAnnualRate) {
+
+
+
+    public MortgageValueAnnualRate (float minValueAnnualRate, float maxValueAnnualRate) {
         setMinAnnualRate(minValueAnnualRate);
         setMaxValueAnnualRate(maxValueAnnualRate);
     }

@@ -5,15 +5,11 @@ import java.text.NumberFormat;
 public class MortgageV3 {
     public static void main(String[] args) {
 
-        var mortPrincipal = new MortgagePrincipal();
-        mortPrincipal.valuePrincipalMinMax(25_000,90_000);
+        var mortPrincipal = new MortgagePrincipal(25_000,90_000);
 
-        var mortValuePeriod = new MortgageValuePeriod();
-        mortValuePeriod.valuePeriodMinMax((byte) 1, (byte) 29);
+        var mortValuePeriod = new MortgageValuePeriod((byte) 1, (byte) 29);
 
-        var mortValueAnnualRate = new MortgageValueAnnualRate();
-
-        mortValueAnnualRate.annualRateValueMinMax((float) 0.1, (float) 20.1);
+        var mortValueAnnualRate = new MortgageValueAnnualRate((float) 0.1, (float) 20.1);
 
         var finalMortgageCalculations = new FinalMortgageCalculations();
 

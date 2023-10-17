@@ -10,11 +10,13 @@ public class MortgagePrincipal {
     private static int principal;
 
 
-    public void valuePrincipalMinMax (int minValuePrincipal, int maxValuePrincipal) {
+    public MortgagePrincipal (int minValuePrincipal, int maxValuePrincipal) {
         setMinValuePrincipal(minValuePrincipal);
         setMaxValuePrincipal(maxValuePrincipal);
     }
-    public int valuePrincipal () {
+
+
+    public static int valuePrincipal () {
 
         if (!gotPrincipal) {
 

@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class MortgageValuePeriod {
     private static byte minValuePeriod;
     private static byte maxValuePeriod;
-    public void valuePeriodMinMax (byte minValuePeriod, byte maxValuePeriod) {
+    public MortgageValuePeriod (byte minValuePeriod, byte maxValuePeriod) {
         setMinValuePeriod(minValuePeriod);
         setMaxValuePeriod(maxValuePeriod);
     }
