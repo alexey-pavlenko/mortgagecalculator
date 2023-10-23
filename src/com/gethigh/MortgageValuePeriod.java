@@ -1,15 +1,14 @@
 package com.gethigh;
-
 import java.util.Scanner;
-
 public class MortgageValuePeriod {
-    private static byte minValuePeriod;
-    private static byte maxValuePeriod;
-    public MortgageValuePeriod (byte minValuePeriod, byte maxValuePeriod) {
+    private byte minValuePeriod;
+    private byte maxValuePeriod;
+    private byte periodYears;
+    public MortgageValuePeriod(byte minValuePeriod, byte maxValuePeriod) {
         setMinValuePeriod(minValuePeriod);
         setMaxValuePeriod(maxValuePeriod);
     }
-    public static byte periodYears () {
+    public void periodYears() {
 
         Scanner mortgage = new Scanner(System.in);
         System.out.printf("Period (Years) (%s - %s) ONLY: ", minValuePeriod, maxValuePeriod);
@@ -19,7 +18,7 @@ public class MortgageValuePeriod {
             mortgage.next();
         }
 
-        byte periodYears = mortgage.nextByte();
+         periodYears = mortgage.nextByte();
 
         while (periodYears < minValuePeriod || periodYears > maxValuePeriod) {
 
@@ -35,10 +34,8 @@ public class MortgageValuePeriod {
 
             periodYears = mortgage.nextByte();
 
-            continue;
-
         }
-        return periodYears;
+
     }
     private void setMinValuePeriod (byte minValuePeriod) {
         if (minValuePeriod <= 0) {
@@ -48,7 +45,6 @@ public class MortgageValuePeriod {
             this.minValuePeriod = minValuePeriod;
         }
     }
-
     private void setMaxValuePeriod (byte maxValuePeriod) {
         if (maxValuePeriod >= 30) {
             throw new IllegalArgumentException("periodYears shouldn't be more or equal to 30 MF");
@@ -56,5 +52,8 @@ public class MortgageValuePeriod {
         else {
             this.maxValuePeriod = maxValuePeriod;
         }
+    }
+    public byte getPeriodYears() {
+        return periodYears;
     }
 }

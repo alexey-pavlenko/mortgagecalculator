@@ -1,22 +1,16 @@
 package com.gethigh;
-
 import java.util.Scanner;
-
 public class MortgagePrincipal {
-
     private static int minValuePrincipal;
     private static int maxValuePrincipal;
     private static boolean gotPrincipal = false;
-    private static int principal;
-
+    private static int valuePrincipal;
 
     public MortgagePrincipal (int minValuePrincipal, int maxValuePrincipal) {
         setMinValuePrincipal(minValuePrincipal);
         setMaxValuePrincipal(maxValuePrincipal);
     }
-
-
-    public static int valuePrincipal () {
+    public static void valuePrincipal () {
 
         if (!gotPrincipal) {
 
@@ -28,11 +22,9 @@ public class MortgagePrincipal {
                 mortgage.next();
             }
 
-            principal = mortgage.nextInt();
+             valuePrincipal = mortgage.nextInt();
 
-
-
-            while (principal < minValuePrincipal || principal > maxValuePrincipal) {
+            while (valuePrincipal < minValuePrincipal || valuePrincipal > maxValuePrincipal) {
 
                 System.out.printf("WATRUDOIN I TOLD YA %s - %s", minValuePrincipal, maxValuePrincipal);
 
@@ -44,24 +36,12 @@ public class MortgagePrincipal {
                     mortgage.next();
 
                 }
-
-
-                principal = mortgage.nextInt();
-
-
-
-                // continue;
-
-
+                valuePrincipal = mortgage.nextInt();
 
             }
-
             gotPrincipal = true;
         }
 
-
-
-        return principal;
     }
     private void setMinValuePrincipal (int minValuePrincipal) {
         if (minValuePrincipal <= 20_000) {
@@ -78,5 +58,8 @@ public class MortgagePrincipal {
         else {
             this.maxValuePrincipal = maxValuePrincipal;
         }
+    }
+    public static int getValuePrincipal() {
+        return valuePrincipal;
     }
 }
