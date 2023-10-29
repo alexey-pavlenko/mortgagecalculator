@@ -1,8 +1,8 @@
 package com.gethigh;
 import java.util.Scanner;
 public class MortgageValueAnnualRate {
-    public float minValueAnnualRate;
-    public float maxValueAnnualRate;
+    private float minValueAnnualRate;
+    private float maxValueAnnualRate;
     private float annualInterestRate;
     public MortgageValueAnnualRate(float minValueAnnualRate, float maxValueAnnualRate) {
         setMinAnnualRate(minValueAnnualRate);
