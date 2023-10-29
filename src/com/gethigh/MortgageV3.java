@@ -1,19 +1,27 @@
 package com.gethigh;
 import java.text.NumberFormat;
 public class MortgageV3 {
-
     public static void main(String[] args) {
 
-        var MortgageMonthlyPayment = new MortgageMonthlyPayment();
-        float  monthlyPayment = MortgageMonthlyPayment.monthlyPayment(0.1F, 20.0F,
-                25_000, 90_000, (byte) 1, (byte) 29);
+        var mortgageValuePeriod = new MortgageValuePeriod((byte) 1, (byte) 29);
+        var mortgageValuePrincipal = new MortgagePrincipal(25_000, 90_000);
+        var mortgageValueAnnualRate = new MortgageValueAnnualRate(0.1F, 20.0F);
 
-        String resultDollars = NumberFormat.getCurrencyInstance().format(monthlyPayment);
+        var monthlyPayment = new MortgageFormulas(mortgageValuePeriod,
+                mortgageValuePrincipal, mortgageValueAnnualRate);
 
-        System.out.println("Your monthly payment: " + resultDollars);
+        monthlyPayment.monthlyPayment();
 
+        System.out.println("Your monthly payment: " +
+                NumberFormat.getCurrencyInstance().format(MortgageFormulas.getMonthlyPayment()));
+
+        int month = 0;
         var MortgageRemainingDept = new MortgageRemainingDept();
-        MortgageRemainingDept.mortgageRemainingDept();
 
+        for (double balance : MortgageRemainingDept.mortgageRemainingDept()) {
+            month++;
+            System.out.printf("Ending (Remaining) Balance (Dept), Month %s: "
+                    + NumberFormat.getCurrencyInstance().format(balance) + "\n", month);
+        }
     }
 }

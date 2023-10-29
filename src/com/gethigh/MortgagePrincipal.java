@@ -1,16 +1,16 @@
 package com.gethigh;
 import java.util.Scanner;
 public class MortgagePrincipal {
-    private static int minValuePrincipal;
-    private static int maxValuePrincipal;
-    private static boolean gotPrincipal = false;
-    private static int valuePrincipal;
+    private int minValuePrincipal;
+    private int maxValuePrincipal;
+    private boolean gotPrincipal = false;
+    private int valuePrincipal;
 
     public MortgagePrincipal (int minValuePrincipal, int maxValuePrincipal) {
         setMinValuePrincipal(minValuePrincipal);
         setMaxValuePrincipal(maxValuePrincipal);
     }
-    public static void valuePrincipal () {
+    public void valuePrincipal () {
 
         if (!gotPrincipal) {
 
@@ -22,7 +22,7 @@ public class MortgagePrincipal {
                 mortgage.next();
             }
 
-             valuePrincipal = mortgage.nextInt();
+            valuePrincipal = mortgage.nextInt();
 
             while (valuePrincipal < minValuePrincipal || valuePrincipal > maxValuePrincipal) {
 
@@ -59,7 +59,7 @@ public class MortgagePrincipal {
             this.maxValuePrincipal = maxValuePrincipal;
         }
     }
-    public static int getValuePrincipal() {
+    public int getValuePrincipal() {
         return valuePrincipal;
     }
 }

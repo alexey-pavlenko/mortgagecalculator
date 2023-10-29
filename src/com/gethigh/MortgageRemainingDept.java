@@ -1,25 +1,14 @@
 package com.gethigh;
-import java.text.DecimalFormat;
 public class MortgageRemainingDept {
-    public void mortgageRemainingDept() {
+    public double[] mortgageRemainingDept() {
 
-        float monthlyPayment = MortgageMonthlyPayment.getMonthlyPayment();
+        short getNumberOfPayments = MortgageValuePeriod.getNumberOfPayments();
 
-        float principalValue = MortgagePrincipal.getValuePrincipal();
-
-        int monthX = 0;
-        DecimalFormat roundItUp = new DecimalFormat("##.0");
-
-        while (principalValue > 0) {
-
-            monthX += 1;
-
-            System.out.printf("Remaining dept in Month %s: $" + roundItUp.format(principalValue) + "\n", monthX);
-
-            principalValue = principalValue - monthlyPayment;
-
+        var balances = new double [getNumberOfPayments];
+        for (short month = 1; MortgageFormulas.endingBalance(month) > 0; month++) {
+            balances[month-1] = MortgageFormulas.endingBalance(month);
         }
-
+        return balances;
     }
 }
 

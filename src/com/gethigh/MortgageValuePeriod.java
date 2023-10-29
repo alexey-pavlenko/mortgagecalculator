@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class MortgageValuePeriod {
     private byte minValuePeriod;
     private byte maxValuePeriod;
-    private byte periodYears;
+    private static byte periodYears;
     public MortgageValuePeriod(byte minValuePeriod, byte maxValuePeriod) {
         setMinValuePeriod(minValuePeriod);
         setMaxValuePeriod(maxValuePeriod);
@@ -18,10 +18,9 @@ public class MortgageValuePeriod {
             mortgage.next();
         }
 
-         periodYears = mortgage.nextByte();
+        periodYears = mortgage.nextByte();
 
         while (periodYears < minValuePeriod || periodYears > maxValuePeriod) {
-
 
             System.out.printf("WATRUDOIN I TOLD YA %s - %s", minValuePeriod, maxValuePeriod);
 
@@ -31,11 +30,8 @@ public class MortgageValuePeriod {
                 System.out.printf("Input is not a number. Enter a number: ");
                 mortgage.next();
             }
-
             periodYears = mortgage.nextByte();
-
         }
-
     }
     private void setMinValuePeriod (byte minValuePeriod) {
         if (minValuePeriod <= 0) {
@@ -53,7 +49,10 @@ public class MortgageValuePeriod {
             this.maxValuePeriod = maxValuePeriod;
         }
     }
-    public byte getPeriodYears() {
+    public static byte getPeriodYears() {
         return periodYears;
+    }
+    public static short getNumberOfPayments() {
+        return (short) (getPeriodYears() * 12);
     }
 }
