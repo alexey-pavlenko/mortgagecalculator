@@ -1,12 +1,14 @@
 package com.gethigh;
-public class MortgageFormulas {
+public class MortgageFormulas implements MortgageFormulable {
     private static float monthlyPayment;
     private static double endingBalance;
     private static MortgageValuePeriod mortgageValuePeriod;
-    private static MortgagePrincipal mortgageValuePrincipal;
+
+    private static MortgagePrincipable mortgageValuePrincipal;
+
     private static MortgageValueAnnualRate mortgageValueAnnualRate;
     public MortgageFormulas(MortgageValuePeriod mortgageValuePeriod,
-                            MortgagePrincipal mortgageValuePrincipal,
+                            MortgagePrincipable mortgageValuePrincipal,
                             MortgageValueAnnualRate mortgageValueAnnualRate) {
         this.mortgageValuePeriod = mortgageValuePeriod;
         this.mortgageValuePrincipal = mortgageValuePrincipal;
@@ -22,6 +24,7 @@ public class MortgageFormulas {
 
         return parentheses;
     }
+    @Override
     public float monthlyPayment() {
         mortgageValuePrincipal.valuePrincipal();
         mortgageValueAnnualRate.annualInterestRate();
@@ -45,5 +48,8 @@ public class MortgageFormulas {
     }
     public static float getMonthlyPayment() {
         return monthlyPayment;
+    }
+    public static void setMortgageValuePrincipal(MortgagePrincipable mortgageValuePrincipal) {
+        MortgageFormulas.mortgageValuePrincipal = mortgageValuePrincipal;
     }
 }

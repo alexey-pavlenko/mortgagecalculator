@@ -1,7 +1,7 @@
 package com.gethigh;
 import java.text.NumberFormat;
 public class MortgageV3 {
-    public static void main(String[] args) {
+        public static void main(String[] args) {
 
         var mortgageValuePeriod = new MortgageValuePeriod((byte) 1, (byte) 29);
         var mortgageValuePrincipal = new MortgagePrincipal(25_000, 90_000);
@@ -11,6 +11,7 @@ public class MortgageV3 {
                 mortgageValuePrincipal, mortgageValueAnnualRate);
 
         monthlyPayment.monthlyPayment();
+
 
         System.out.println("Your monthly payment: " +
                 NumberFormat.getCurrencyInstance().format(MortgageFormulas.getMonthlyPayment()));
@@ -23,5 +24,13 @@ public class MortgageV3 {
             System.out.printf("Ending (Remaining) Balance (Dept), Month %s: "
                     + NumberFormat.getCurrencyInstance().format(balance) + "\n", month);
         }
-    }
+
+            var mortgageValuePrincipalv2 = new MortgagePrincipalv2(25_000, 90_000);
+            MortgageFormulas.setMortgageValuePrincipal(mortgageValuePrincipalv2);
+
+            monthlyPayment.monthlyPayment();
+            System.out.println("Your monthly payment: " +
+                    NumberFormat.getCurrencyInstance().format(MortgageFormulas.getMonthlyPayment()));
+
+        }
 }

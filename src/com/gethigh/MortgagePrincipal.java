@@ -1,6 +1,6 @@
 package com.gethigh;
 import java.util.Scanner;
-public class MortgagePrincipal {
+public class MortgagePrincipal implements MortgagePrincipable {
     private int minValuePrincipal;
     private int maxValuePrincipal;
     private boolean gotPrincipal = false;
@@ -10,6 +10,7 @@ public class MortgagePrincipal {
         setMinValuePrincipal(minValuePrincipal);
         setMaxValuePrincipal(maxValuePrincipal);
     }
+    @Override
     public void valuePrincipal () {
 
         if (!gotPrincipal) {
@@ -59,7 +60,10 @@ public class MortgagePrincipal {
             this.maxValuePrincipal = maxValuePrincipal;
         }
     }
+    @Override
     public int getValuePrincipal() {
         return valuePrincipal;
     }
+
+
 }
